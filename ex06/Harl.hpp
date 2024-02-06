@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 17:45:54 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/06 13:39:10 by nmunir           ###   ########.fr       */
+/*   Created: 2024/02/06 16:15:55 by nmunir            #+#    #+#             */
+/*   Updated: 2024/02/06 17:05:47 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 #include <iostream>
 
-class Weapon
+class Harl
 {
 public:
-	Weapon(std::string name);
-	const std::string& getType();
-	void setType(std::string type);
-
+	Harl();
+	~Harl();
+	void complain(std::string level);
 private:
-	std::string type;
+	typedef void (Harl::*ptrFcn)();
+	ptrFcn arrayFcn[4];
+	std::string levels[4];
+	void debug(void);
+	void info(void);
+	void warning(void);
+	void error(void);
 };

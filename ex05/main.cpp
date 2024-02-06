@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 17:45:54 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/06 13:39:10 by nmunir           ###   ########.fr       */
+/*   Created: 2024/02/06 16:46:44 by nmunir            #+#    #+#             */
+/*   Updated: 2024/02/06 17:10:39 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Harl.hpp"
 
-#include <iostream>
-
-class Weapon
+int main()
 {
-public:
-	Weapon(std::string name);
-	const std::string& getType();
-	void setType(std::string type);
-
-private:
-	std::string type;
-};
+	Harl h;
+	h.complain("ERROR");
+}

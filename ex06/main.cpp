@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 17:45:54 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/06 13:39:10 by nmunir           ###   ########.fr       */
+/*   Created: 2024/02/06 17:14:27 by nmunir            #+#    #+#             */
+/*   Updated: 2024/02/06 17:27:57 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Harl.hpp"
 
-#include <iostream>
-
-class Weapon
+int main(int ac, char **arg)
 {
-public:
-	Weapon(std::string name);
-	const std::string& getType();
-	void setType(std::string type);
-
-private:
-	std::string type;
-};
+	Harl h;
+	if (ac != 2)
+	{
+		std::cout << "Invalid number of arguments" << std::endl;
+		return (1);
+	}
+	h.complain(arg[1]);
+	
+}

@@ -6,17 +6,17 @@
 #    By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/04 13:36:11 by nmunir            #+#    #+#              #
-#    Updated: 2024/02/06 13:47:21 by nmunir           ###   ########.fr        #
+#    Updated: 2024/02/06 17:16:45 by nmunir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror #-g3 -fsanitize=address
+CXXFLAGS = -std=c++98 -g3 -fsanitize=address -Wall -Wextra -Werror 
 
-SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp \
+SRCS = main.cpp Harl.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
-TARGET = violence
+TARGET = harlFilter
 
 all: $(TARGET)
 
