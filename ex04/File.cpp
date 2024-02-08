@@ -6,7 +6,7 @@
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 14:24:46 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/08 17:06:20 by nmunir           ###   ########.fr       */
+/*   Updated: 2024/02/08 19:40:39 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,18 @@ const std::string File::getOutFileName(void)
 
 int readContent(std::string &content, File &_file)
 {
-	char c;
 	std::ifstream inputFile(_file.getFileName().c_str(), std::ios::in);
 	if (!inputFile.is_open())
 	{
 		std::cerr << "Could not open the file - '" << _file.getFileName() << "'" << std::endl;
 		return 1;
 	}
-	while (inputFile.get(c))
-		content += c;
+	if(!(std::getline(inputFile, content, '\0')))
+	{
+		std::cerr << "Empty file - '" << _file.getFileName() << "'" << std::endl;
+		inputFile.close();
+		return (1);
+	}
 	inputFile.close();
 	return (0);
 }

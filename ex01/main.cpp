@@ -6,7 +6,7 @@
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:36:56 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/04 17:02:57 by nmunir           ###   ########.fr       */
+/*   Updated: 2024/02/08 19:25:44 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 	int hordeSize;
 
 	hordeSize = 5;
-	Zombie *z = zombieHorde(hordeSize, "alaa");
+	Zombie *z = zombieHorde(hordeSize, "442");
 	while (++i < hordeSize)
 		z[i].announce();
 	delete[] z;

@@ -6,7 +6,7 @@
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:11:20 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/08 17:48:43 by nmunir           ###   ########.fr       */
+/*   Updated: 2024/02/08 21:34:33 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 int main()
 {
 	Harl h;
+	h.complain("DEBUG");
+	h.complain("INFO");
+	h.complain("WARNING");
 	h.complain("ERROR");
 	return (0);
 }
