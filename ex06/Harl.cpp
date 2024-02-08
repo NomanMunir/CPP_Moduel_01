@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 16:18:05 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/06 17:30:07 by nmunir           ###   ########.fr       */
+/*   Created: 2024/02/08 17:11:11 by nmunir            #+#    #+#             */
+/*   Updated: 2024/02/08 18:14:27 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,57 +14,71 @@
 
 Harl::Harl()
 {
-
-	arrayFcn[0] = &Harl::debug;
-	arrayFcn[1] = &Harl::info;
-	arrayFcn[2] = &Harl::warning;
-	arrayFcn[3] = &Harl::error;
-	levels[0] = "DEBUG";
-	levels[1] = "INFO";
-	levels[2] = "WARNING";
-	levels[3] = "ERROR";
+	
 }
+
 Harl::~Harl()
 {
-}
-void Harl::complain(std::string level)
-{
-	for (int i = 0; i < 4; ++i)
-	{
-		if (level == levels[i])
-		{
-			switch (i)
-			{
-				case 0:
-					(this->*arrayFcn[i++])();
-				case 1:
-					(this->*arrayFcn[i++])();
-				case 2:
-					(this->*arrayFcn[i++])();
-				case 3:
-					(this->*arrayFcn[i++])();	
-				default:
-					break ;			
-			}
-			return;
-		}
-	}
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
 void Harl::debug(void)
 {
-	std::cout << "DEBUG" << " I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!";
+	std::cout << std::endl;
+	std::cout << std::endl;
 }
+
 void Harl::info(void)
 {
-	std::cout << "INFO I cannot believe adding extra bacon costs more money. You didn\'t put enough bacon in my burger! If you did, I wouldn\'t be asking for more!" << std::endl;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger!";
+	std::cout << std::endl;
+	std::cout << std::endl;
 }
+
 void Harl::warning(void)
 {
-	std::cout << "WARNING" << " I think I deserve to have some extra bacon for free. I\'ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here since last month.";
+	std::cout << std::endl;
+	std::cout << std::endl;
 }
+
 void Harl::error(void)
 {
-	std::cout << "ERROR " << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << "[ ERROR ]" << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now.";
+	std::cout << std::endl;
+	std::cout << std::endl;
+}
+
+void Harl::complain(std::string level)
+{
+	std::string logLevels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = 0;
+	while (i < 4)
+	{
+		if (logLevels[i] == level)
+			break;
+		else if (i == 3)
+		{
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			return ;
+		}
+		i++;
+	}
+	switch (i)
+	{
+	case 0:
+		this->debug();
+	case 1:
+		this->info();
+	case 2:
+		this->warning();
+	case 3:
+		this->error();
+	default:
+		break;
+	}		
 }

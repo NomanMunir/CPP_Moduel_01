@@ -6,7 +6,7 @@
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:39:48 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/04 16:41:30 by nmunir           ###   ########.fr       */
+/*   Updated: 2024/02/08 10:37:02 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie()
 {
-	std::cout << "destructor called! : " << this->name << std::endl;
+	std::cout << "Destroyed : " << this->name << std::endl;
 }
 
 Zombie *newZombie(std::string name)

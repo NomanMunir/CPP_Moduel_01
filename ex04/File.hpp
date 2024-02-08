@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 12:41:55 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/08 13:25:10 by nmunir           ###   ########.fr       */
+/*   Created: 2024/02/08 14:24:48 by nmunir            #+#    #+#             */
+/*   Updated: 2024/02/08 16:57:52 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#pragma once
 
-Weapon::Weapon(std::string newType)
+#include <iostream>
+#include <fstream>
+
+class File
 {
-	this->type = newType;
-}
+		std::string _fileName;
+		std::string _outFileName;
+	public:
+		const std::string getFileName(void);
+		const std::string getOutFileName(void);
+		File(std::string inFile);
+		~File();
+};
 
-Weapon::~Weapon()
-{
-
-}
-
-const std::string& Weapon::getType()
-{
-	return (this->type);
-}
-
-void Weapon::setType(std::string newType)
-{
-	this->type = newType;
-}
+int readContent(std::string& content, File& _file);
+int writeOutFile(std::string& content, char **av, File& _file);

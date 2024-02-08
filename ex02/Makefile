@@ -6,11 +6,11 @@
 #    By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/04 13:36:11 by nmunir            #+#    #+#              #
-#    Updated: 2024/02/04 17:43:45 by nmunir           ###   ########.fr        #
+#    Updated: 2024/02/08 10:58:19 by nmunir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS = main.cpp \
@@ -27,7 +27,7 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(TARGET)

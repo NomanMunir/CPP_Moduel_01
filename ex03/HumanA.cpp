@@ -5,24 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 17:57:49 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/06 13:24:45 by nmunir           ###   ########.fr       */
+/*   Created: 2024/02/08 12:57:34 by nmunir            #+#    #+#             */
+/*   Updated: 2024/02/08 13:40:12 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon& w)
+HumanA::HumanA(std::string name, Weapon& wp) : _name(name), _wp(wp)
 {
-	this->name = name;
-	this->HumanAWeapon = &w;
+	
 }
+
 HumanA::~HumanA()
 {
-	std::cout << "Destructor is called" << std::endl;
+	
 }
-void HumanA::attack(void)
+
+void HumanA::attack()
 {
-	std::cout << this->name << " attcks with their ";
-	std::cout << this->HumanAWeapon->getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_wp.getType();
+	std::cout << std::endl;
 }
