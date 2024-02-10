@@ -6,7 +6,7 @@
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 17:11:11 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/08 18:13:33 by nmunir           ###   ########.fr       */
+/*   Updated: 2024/02/10 10:42:46 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ void Harl::complain(std::string level)
 	for (int i = 0; i < 4; i++)
 	{
 		if (logLevels[i] == level)
-			(this->*array[i])();
-		else if (i == 3)
-			std::cout <<"[ Probably complaining about insignificant problems ]" << std::endl;
+			return ((this->*array[i])());
 	}
 }

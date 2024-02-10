@@ -6,11 +6,13 @@
 /*   By: nmunir <nmunir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:37:02 by nmunir            #+#    #+#             */
-/*   Updated: 2024/02/08 10:57:05 by nmunir           ###   ########.fr       */
+/*   Updated: 2024/02/10 10:46:27 by nmunir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+
 #include <iostream>
 
 class Zombie
@@ -27,3 +29,4 @@ public:
 };
 
 Zombie* zombieHorde( int N, std::string name );
+#endif
